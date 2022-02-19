@@ -19,9 +19,7 @@ export default function Home({ posts }) {
           </div>
         </div>
       </div>
-      <div className="container mx-auto bg-white rounded-lg p-0 lg:p-8 pb-12 mb-8 border border-tla-green-500">
-        <FeaturedPosts />
-      </div>
+      <FeaturedPosts />
     </div>
   );
 }

@@ -39,7 +39,7 @@ const FeaturedPosts = () => {
   }, []);
 
   const customLeftArrow = (
-    <div className="absolute arrow-btn left-0 text-center py-3 cursor-pointer bg-pink-600 rounded-full">
+    <div className="absolute arrow-btn left-0 text-center py-3 cursor-pointer bg-tla-green-700 rounded-full">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-6 text-white w-full"
@@ -58,7 +58,7 @@ const FeaturedPosts = () => {
   );
 
   const customRightArrow = (
-    <div className="absolute arrow-btn right-0 text-center py-3 cursor-pointer bg-pink-600 rounded-full">
+    <div className="absolute arrow-btn right-0 text-center py-3 cursor-pointer bg-tla-green-700 rounded-full">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-6 text-white w-full"
@@ -77,7 +77,7 @@ const FeaturedPosts = () => {
   );
 
   return (
-    <div className="mb-8">
+    <div className="container mx-auto bg-white rounded-lg p-5 pb-12 mb-8 border border-tla-green-500">
       <h3 className="text-xl mb-8 font-semibold border-b pb-4">
         Featured Posts
       </h3>
@@ -88,6 +88,22 @@ const FeaturedPosts = () => {
         responsive={responsive}
         itemClass="px-4"
       >
+        {dataLoaded &&
+          featuredPosts.map((post, index) => (
+            <FeaturedPostCard key={index} post={post} />
+          ))}
+        {dataLoaded &&
+          featuredPosts.map((post, index) => (
+            <FeaturedPostCard key={index} post={post} />
+          ))}
+        {dataLoaded &&
+          featuredPosts.map((post, index) => (
+            <FeaturedPostCard key={index} post={post} />
+          ))}
+        {dataLoaded &&
+          featuredPosts.map((post, index) => (
+            <FeaturedPostCard key={index} post={post} />
+          ))}
         {dataLoaded &&
           featuredPosts.map((post, index) => (
             <FeaturedPostCard key={index} post={post} />
