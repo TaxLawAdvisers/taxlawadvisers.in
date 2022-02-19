@@ -6,10 +6,6 @@ import { getPosts } from "../services";
 export default function Home({ posts }) {
   return (
     <div className="container mx-auto px-10 mb-8">
-      <Head>
-        <title>CMS Blog - Aashish Singhal</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
         <div className="lg:col-span-8 col-span-1">
           {posts.map((post, index) => (
@@ -23,7 +19,7 @@ export default function Home({ posts }) {
           </div>
         </div>
       </div>
-      <div className="container mx-auto bg-white rounded-lg p-0 lg:p-8 pb-12 mb-8">
+      <div className="container mx-auto bg-white rounded-lg p-0 lg:p-8 pb-12 mb-8 border border-tla-green-500">
         <FeaturedPosts />
       </div>
       <Copyright />

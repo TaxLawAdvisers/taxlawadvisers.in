@@ -1,3 +1,4 @@
+import { graphql } from "graphql";
 import { request, gql } from "graphql-request";
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
@@ -19,7 +20,7 @@ export const getPosts = async () => {
             createdAt
             slug
             title
-            exerpt
+            excerpt
             featuredImage {
               url
             }
@@ -108,7 +109,7 @@ export const getPostDetails = async (slug) => {
         createdAt
         slug
         title
-        exerpt
+        excerpt
         featuredImage {
           url
         }
@@ -139,6 +140,19 @@ export const getComments = async (slug) => {
   `;
   const result = await request(graphqlAPI, query, { slug });
   return result.comments;
+};
+
+export const getCategory = async (slug) => {
+  const query = gql`
+    query GetCategory($slug: String!) {
+      categories(where: { slug: $slug }) {
+        name
+        slug
+      }
+    }
+  `;
+  const result = await request(graphqlAPI, query, { slug });
+  return result.categories;
 };
 
 export const getFeaturedPosts = async () => {

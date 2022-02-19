@@ -1,5 +1,8 @@
 import * as React from "react";
+import Image from "next/image";
+import Head from "next/head";
 import Link from "next/link";
+import Logo from "../assets/logo.png";
 import { getCategories } from "../services";
 
 const Header = () => {
@@ -10,19 +13,21 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="container mx-auto px-10 mb-8">
-      <div className="border-b w-full inline-block border-blue-400 py-8">
+    <div className="container mx-auto px-5 mb-8">
+      <Head>
+        <title>TaxLawAdvisers</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <div className="border-b w-full flex justify-between items-center border-tla-green-500 py-4">
         <div className="md:float-left block">
           <Link href="/">
-            <span className="cursor-pointer font-bold text-4xl text-white">
-              GraphCMS - test blog website
-            </span>
+            <Image src={Logo} alt="TaxLawAdviser" className="mr-1" />
           </Link>
         </div>
-        <div className="hidden md:float-left md:contents">
+        <div className="hidden md:float-left md:contents md:">
           {categories.map((category) => (
             <Link key={category.slug} href={`/category/${category.slug}`}>
-              <span className="md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer">
+              <span className="md:float-right text-tla-green-500 font-semibold cursor-pointer">
                 {category.name}
               </span>
             </Link>
