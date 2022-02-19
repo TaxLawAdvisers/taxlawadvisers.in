@@ -13,12 +13,12 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="container mx-auto px-5 mb-8">
+    <div className="mx-auto px-3 mb-8 ">
       <Head>
         <title>TaxLawAdvisers</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="border-b w-full flex justify-between items-center border-tla-green-500 py-4">
+      <div className="border-b w-full flex justify-between items-center border-tla-green-500 py-4 px-5">
         <div className="md:float-left block">
           <Link href="/">
             <Image src={Logo} alt="TaxLawAdviser" className="mr-1" />
